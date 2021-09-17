@@ -1,4 +1,7 @@
 ```bash
+ git clone https://github.com/spritlesoftware/sample-rails6-app.git
+ cd sample-rails6-app
+ 
  sudo apt update
  sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release -y
  
