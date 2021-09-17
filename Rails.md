@@ -192,8 +192,7 @@ exit
 
 open your browser => xxx.xxx.xxx.xxx:3000
 
+http://3.85.102.254:3000/
+
+
 ```
-
-
-
-
