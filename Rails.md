@@ -19,9 +19,8 @@
 
 ```
 
-
-
 ```Dockerfile
+
 # Dockerfile
 
 FROM ruby:2.6.0
@@ -46,8 +45,9 @@ CMD ["rails", "server", "-b", "0.0.0.0"]
 ```
 
 ```docker-compose
+
 # vim docker-compose.yml
-http://3.85.102.254:3000/
+
 version: '3.5'
 services:
   postgres:
@@ -87,7 +87,6 @@ volumes:
 # vim config/database.yml 
 
 # PostgreSQL. Versions 9.3 and up are supported.
-#
 # Install the pg driver:
 #   gem install pg
 # On macOS with Homebrew:
