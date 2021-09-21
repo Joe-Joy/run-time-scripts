@@ -1,12 +1,11 @@
 ```Jenkinsfile
 
 node {   
-    stage ('kubernetes') {
-        steps{
-            sh '''
-                ssh -o StrictHostKeyChecking=no username@ip-address 'du -sh /backup'
-            '''
-        }
+    stage ('info') {
+        sh '''
+            #!/bin/bash +x
+            ssh -o StrictHostKeyChecking=no username@ip-address 'du -sh /backup'
+        '''
     }
 }
 
