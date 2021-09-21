@@ -1,3 +1,5 @@
+```Jenkinsfile
+
 node {   
     stage ('kubernetes') {
         steps{
@@ -7,3 +9,6 @@ node {
         }
     }
 }
+
+
+```
