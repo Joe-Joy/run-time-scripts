@@ -68,7 +68,7 @@ else
 fi
 
 # docker container start -> $1
-sudo docker run -d --name $CONTAINER_NAME -p $HOST_PORT:$CONTAINER_PORT "$USERNAME/$IMAGE:$VERSION"
+sudo docker run -d --name $CONTAINER_NAME -p $HOST_PORT:$CONTAINER_PORT "$USERNAME/$IMAGE_NAME:$VERSION"
 
 if [ "$(sudo docker container inspect -f '{{.State.Running}}' $CONTAINER_NAME )" == "true" ]; then 
     echo "container running now"
