@@ -50,19 +50,19 @@ while getopts "$optspec" optchar; do
 done
 
 
-container=`docker ps -a -f name=$CONTAINER_NAME -q`
+container=`sudo docker ps -a -f name=$CONTAINER_NAME -q`
 
 if [[ "$container" ]]
 then
-    docker rm -f $container
+    sudo docker rm -f $container
 else
     echo "Container was not found"
 fi
 
 # docker container start -> $1
-docker run -d --name $CONTAINER_NAME -p $HOST_PORT:$CONTAINER_PORT $IMAGE_NAME
+sudo docker run -d --name $CONTAINER_NAME -p $HOST_PORT:$CONTAINER_PORT $IMAGE_NAME
 
-if [ "$( docker container inspect -f '{{.State.Running}}' $CONTAINER_NAME )" == "true" ]; then 
+if [ "$(sudo docker container inspect -f '{{.State.Running}}' $CONTAINER_NAME )" == "true" ]; then 
     echo "container running now"
 else 
     exit 0
