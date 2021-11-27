@@ -5,7 +5,7 @@ function print_usage() {
 echo "\
 Usage: demo [OPTIONS]
 Starts a demo with the based on the supplied options.
-    --H or --hostname  Mandatory:* Pass the hostname.
+    --H or --host      Mandatory:* Pass the hostname.
     --A or --address   Mandatory:* Pass the address
 "
 }
@@ -16,8 +16,8 @@ while getopts "$optspec" optchar; do
     case "${optchar}" in
         -)
             case "${OPTARG}" in
-                H=*|hostname=*)
-                    HOSTNAME=${OPTARG##*=}
+                H=*|host=*)
+                    HOST=${OPTARG##*=}
                     ;;
                 A=*|address=*)
                     ADDRESS=${OPTARG##*=}
@@ -43,10 +43,10 @@ while getopts "$optspec" optchar; do
 done
 
 
-echo $HOSTNAME $ADDRESS
+echo $HOST $ADDRESS
 
 
-# Run the command bash demo.sh --hostname=jino  --address="0.0.0.0"
+# Run the command bash demo.sh --host=jino  --address="0.0.0.0"
 # Run the command ./demo.sh --H=jino  --A="0.0.0.0"
 
 ```
