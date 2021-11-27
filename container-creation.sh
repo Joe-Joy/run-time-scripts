@@ -20,7 +20,7 @@ while getopts "$optspec" optchar; do
                 name=*)
                     CONTAINER_NAME=${OPTARG##*=}
                     ;;
-                address=*)
+                image=*)
                     IMAGE_NAME=${OPTARG##*=}
                     ;;
                 cport=*)
