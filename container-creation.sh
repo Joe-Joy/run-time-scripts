@@ -8,6 +8,8 @@ Starts a demo with the based on the supplied options.
     --image   Mandatory:* Pass the image name.
     --cport   Mandatory:* Pass the acontainer port
     --hport   Mandatory:* Pass the host port
+    --username   Mandatory:* Pass the host port
+    --version   Mandatory:* Pass the host port
 "
 }
 
@@ -28,7 +30,13 @@ while getopts "$optspec" optchar; do
                     ;; 
                 hport=*)
                     HOST_PORT=${OPTARG##*=}
-                    ;;                           
+                    ;;  
+                username=*)
+                    USERNAME=${OPTARG##*=}
+                    ;;  
+                version=*)
+                    VERSION=${OPTARG##*=}
+                    ;;  
                 *)
                     echo "Unknown option --${OPTARG}" >&2
                     exit 1
@@ -60,7 +68,7 @@ else
 fi
 
 # docker container start -> $1
-sudo docker run -d --name $CONTAINER_NAME -p $HOST_PORT:$CONTAINER_PORT $IMAGE_NAME
+sudo docker run -d --name $CONTAINER_NAME -p $HOST_PORT:$CONTAINER_PORT "$USERNAME/$IMAGE:$VERSION"
 
 if [ "$(sudo docker container inspect -f '{{.State.Running}}' $CONTAINER_NAME )" == "true" ]; then 
     echo "container running now"
