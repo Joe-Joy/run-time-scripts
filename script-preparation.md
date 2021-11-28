@@ -42,8 +42,14 @@ while getopts "$optspec" optchar; do
     esac
 done
 
+# OR CONDITION => if [ $ADDRESS ] || [ $HOST ]; then
+# AND CONDITION => if [ $ADDRESS ] and [ $HOST ]; then
 
-echo $HOST $ADDRESS
+if [ $ADDRESS ] || [ $HOST ]; then
+   echo $HOST $ADDRESS
+else
+   print_usage
+fi
 
 
 # Run the command bash demo.sh --host=jino  --address="0.0.0.0"
