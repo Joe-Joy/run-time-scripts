@@ -43,7 +43,7 @@ while getopts "$optspec" optchar; do
 done
 
 # OR CONDITION => if [ $ADDRESS ] || [ $HOST ]; then
-# AND CONDITION => if [ $ADDRESS ] and [ $HOST ]; then
+# AND CONDITION => if [ $ADDRESS ] && [ $HOST ]; then
 
 if [ $ADDRESS ] || [ $HOST ]; then
    echo $HOST $ADDRESS
